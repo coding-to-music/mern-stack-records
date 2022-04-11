@@ -3,6 +3,7 @@ import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import path from "path";
 
 // const mongoose = require("mongoose");
 // const express = require("express");
@@ -33,6 +34,7 @@ import cors from "cors";
 // mongoose.set('useFindAndModify', false);
 
 // const path = require("path");
+
 const port = process.env.PORT || 4000;
 
 const app = express();
@@ -58,8 +60,14 @@ app.listen(port, () => {
   console.log(`💥 Application is listening on port http://localhost:${port}`);
 });
 
-app.use(cors());
+// app.use(cors());
 
+// All remaining requests return the React app, so it can handle routing.
+app.get("*", function (request, response) {
+  response.sendFile(
+    path.resolve(__dirname, "./client/build/static/js/", "main.*.js")
+  );
+});
 // const postRoutes = require("./routes/posts.js");
 
 import postRoutes from "./routes/posts.js";
