@@ -112,6 +112,19 @@ Buildpack added. Next release on mern-stack-records will use:
 Run git push heroku main to create a new release using these buildpacks.
 ```
 
+Looks like it worked!
+
+```java
+2022-04-11T06:38:03.000000+00:00 app[api]: Build succeeded
+2022-04-11T06:38:03.776013+00:00 heroku[web.1]: Starting process with command `bin/boot`
+2022-04-11T06:38:04.700263+00:00 app[web.1]: Injecting runtime env into ./client/build/static/js/2.7304d9d9.chunk.js (from .profile.d/inject_react_app_env.sh)
+2022-04-11T06:38:04.810248+00:00 app[web.1]: Injecting runtime env into ./client/build/static/js/main.ffafc86e.chunk.js (from .profile.d/inject_react_app_env.sh)
+2022-04-11T06:38:04.901827+00:00 app[web.1]: Injecting runtime env into ./client/build/static/js/runtime-main.c012fedc.js (from .profile.d/inject_react_app_env.sh)
+2022-04-11T06:38:05.215167+00:00 app[web.1]: Starting log redirection...
+2022-04-11T06:38:05.215343+00:00 app[web.1]: Starting nginx...
+2022-04-11T06:38:05.597744+00:00 heroku[web.1]: State changed from starting to up
+```
+
 ### Lets try reversing the order
 
 ```java
