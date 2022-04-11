@@ -4,6 +4,11 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // const mongoose = require("mongoose");
 // const express = require("express");
@@ -68,6 +73,8 @@ app.listen(port, () => {
 });
 
 // app.use(cors());
+
+app.use(express.static(path.join(__dirname, "client/build")));
 
 // All remaining requests return the React app, so it can handle routing.
 app.get("*", function (request, response) {
