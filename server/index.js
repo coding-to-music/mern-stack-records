@@ -43,8 +43,15 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 // app.use(express.static(path.join(__dirname, 'client/build')));
 
+const CONNECT_OPTIONS = {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+};
+
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, CONNECT_OPTIONS)
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
