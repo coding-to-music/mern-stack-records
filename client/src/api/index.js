@@ -1,7 +1,7 @@
 import axios from "axios";
-import "dotenv/config";
+// import "dotenv/config";
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 const url = "http://localhost:${port}/posts";
 
