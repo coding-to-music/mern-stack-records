@@ -2,11 +2,12 @@ import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
+// useCreateIndex: true,
+// useFindAndModify: false,
+
 const CONNECT_OPTIONS = {
   useNewUrlParser: true,
-  useCreateIndex: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
 };
 
 mongoose

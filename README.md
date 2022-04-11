@@ -197,13 +197,13 @@ Output:
 
 ```java
 Upgrading /mnt/volume_nyc1_01/mern-stack-records/package.json
-[====================] 15/15 100%
+[====================] 6/6 100%
 
- dotenv     ^8.2.0  →  ^16.0.0
- express   ^4.17.1  →  ^4.17.3
- helmet     ^4.1.0  →   ^5.0.2
- mongoose  ^5.10.0  →  ^6.2.10
- nodemon    ^2.0.4  →  ^2.0.15
+ body-parser  ^1.19.0  →  ^1.20.0
+ dotenv        ^8.6.0  →  ^16.0.0
+ express      ^4.17.1  →  ^4.17.3
+ mongoose     ^5.11.8  →  ^6.2.10
+ nodemon       ^2.0.6  →  ^2.0.15
 
 Run npm install to install new versions.
 ```
@@ -233,18 +233,22 @@ ncu -u
 
 ```java
 Upgrading /mnt/volume_nyc1_01/mern-stack-records/client/package.json
-[====================] 18/18 100%
+[====================] 15/15 100%
 
- @material-ui/core             ^4.11.0  →  ^4.12.4
- @testing-library/jest-dom      ^4.2.4  →  ^5.16.4
- @testing-library/react         ^9.3.2  →  ^13.0.0
- @testing-library/user-event    ^7.1.2  →  ^14.0.4
- react                        ^16.13.1  →  ^18.0.0
- react-dom                    ^16.13.1  →  ^18.0.0
- react-hook-form                ^6.5.3  →  ^7.29.0
- react-map-gl                   ^5.2.7  →  ^7.0.10
- react-map-gl-geocoder         ^2.0.16  →   ^2.2.0
- react-scripts                   3.4.3  →    5.0.0
+ @material-ui/core            ^4.11.2  →  ^4.12.4
+ @material-ui/icons           ^4.11.2  →  ^4.11.3
+ @testing-library/jest-dom    ^5.11.6  →  ^5.16.4
+ @testing-library/react       ^11.2.2  →  ^13.0.0
+ @testing-library/user-event  ^12.6.0  →  ^14.0.4
+ axios                        ^0.21.0  →  ^0.26.1
+ moment                       ^2.29.1  →  ^2.29.2
+ react                        ^17.0.1  →  ^18.0.0
+ react-dom                    ^17.0.1  →  ^18.0.0
+ react-redux                   ^7.2.2  →   ^7.2.8
+ react-scripts                  4.0.1  →    5.0.0
+ redux                         ^4.0.5  →   ^4.1.2
+ redux-thunk                   ^2.3.0  →   ^2.4.1
+ web-vitals                    ^1.0.1  →   ^2.1.4
 
 Run npm install to install new versions.
 ```
