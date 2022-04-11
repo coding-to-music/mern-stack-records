@@ -1,10 +1,13 @@
-import dotenv from "dotenv";
-dotenv.config();
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
+// import dotenv from "dotenv";
+// import express from "express";
+// import mongoose from "mongoose";
+// import cors from "cors";
 
-import postRoutes from "./routes/posts.js";
+// import postRoutes from "./routes/posts.js";
+
+const mongoose = require("mongoose");
+const express = require("express");
+require("dotenv").config();
 
 // const app = express();
 
@@ -56,6 +59,6 @@ app.listen(port, () => {
   console.log(`💥 Application is listening on port http://localhost:${port}`);
 });
 
-app.use(cors());
+// app.use(cors());
 
-app.use("/posts", postRoutes);
+// app.use("/posts", postRoutes);

@@ -4,7 +4,6 @@
   "description": "",
   "homepage": "https://mern-stack-records.herokuapp.com",
   "main": "index.js",
-  "type": "module",
   "engines": {
     "node": "16.x"
   },
