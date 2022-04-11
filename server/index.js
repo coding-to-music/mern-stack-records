@@ -1,7 +1,8 @@
 // import dotenv from "dotenv";
 import "dotenv/config";
 import express from "express";
-import cors from "cors";
+// import cors from "cors";
+// app.use(cors());
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -22,18 +23,16 @@ app.listen(port, () => {
   console.log(`💥 Application is listening on port http://localhost:${port}`);
 });
 
-// app.use(cors());
+import postRoutes from "./routes/posts.js";
+app.use("/posts", postRoutes);
 
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 // All remaining requests return the React app, so it can handle routing.
 app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "../client/build/", "index.html"));
 });
+
 // const postRoutes = require("./routes/posts.js");
-
-import postRoutes from "./routes/posts.js";
-app.use("/posts", postRoutes);
-
 // const allRoutes = require("./routes/index.routes");
 // app.use("/api", allRoutes);
