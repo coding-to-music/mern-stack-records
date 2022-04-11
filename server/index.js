@@ -12,9 +12,6 @@ import postRoutes from "./routes/posts.js";
 // // app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 // app.use(express.json({ limit: '30mb', extended: true }));
 // app.use(express.urlencoded({ limit: '30mb', extended: true }));
-app.use(cors());
-
-app.use("/posts", postRoutes);
 
 // const CONNECTION_URL = process.env.ATLAS_URI;
 // const CONNECT_OPTIONS = {
@@ -58,3 +55,7 @@ app.listen(port, () => {
   // console.log(`Listening on port ${PORT}`);
   console.log(`💥 Application is listening on port http://localhost:${port}`);
 });
+
+app.use(cors());
+
+app.use("/posts", postRoutes);
