@@ -3,9 +3,10 @@ import axios from "axios";
 
 const port = process.env.PORT || 4000;
 
+// const port = 4000;
 const url = "http://localhost:${port}/posts";
 
-console.log(`Listening on port ${PORT}`);
+console.log(`Listening on port ${port}`);
 console.log(`url ${url}`);
 
 export const fetchPosts = () => axios.get(url);
