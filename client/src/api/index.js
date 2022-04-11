@@ -1,10 +1,8 @@
 import axios from "axios";
-// import "dotenv/config";
 
 const port = process.env.PORT || 4000;
 
-// const port = 4000;
-const url = "http://localhost:${port}/posts";
+const url = `http://localhost:${port}/posts`;
 
 console.log(`Listening on port ${port}`);
 console.log(`url ${url}`);
