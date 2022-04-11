@@ -14,8 +14,6 @@ const port = process.env.PORT || 4000;
 const app = express();
 
 // ℹ️ Connects to the database
-// import("./db");
-
 import "./db/index.js";
 
 // server
@@ -30,9 +28,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 
 // All remaining requests return the React app, so it can handle routing.
 app.get("*", function (request, response) {
-  response.sendFile(
-    path.resolve(__dirname, "/client/build/static/js/", "main.*.js")
-  );
+  response.sendFile(path.resolve(__dirname, "../client/build/", "index.html"));
 });
 // const postRoutes = require("./routes/posts.js");
 
