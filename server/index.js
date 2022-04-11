@@ -1,13 +1,12 @@
 // import dotenv from "dotenv";
-// import express from "express";
-// import mongoose from "mongoose";
-// import cors from "cors";
+import "dotenv/config";
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
 
-// import postRoutes from "./routes/posts.js";
-
-const mongoose = require("mongoose");
-const express = require("express");
-require("dotenv").config();
+// const mongoose = require("mongoose");
+// const express = require("express");
+// require("dotenv").config();
 
 // const app = express();
 
@@ -33,7 +32,7 @@ require("dotenv").config();
 
 // mongoose.set('useFindAndModify', false);
 
-const path = require("path");
+// const path = require("path");
 const port = process.env.PORT || 4000;
 
 const app = express();
@@ -59,6 +58,12 @@ app.listen(port, () => {
   console.log(`💥 Application is listening on port http://localhost:${port}`);
 });
 
-// app.use(cors());
+app.use(cors());
 
-// app.use("/posts", postRoutes);
+// const postRoutes = require("./routes/posts.js");
+
+import postRoutes from "./routes/posts.js";
+app.use("/posts", postRoutes);
+
+// const allRoutes = require("./routes/index.routes");
+// app.use("/api", allRoutes);
