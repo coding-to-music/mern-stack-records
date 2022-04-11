@@ -9,7 +9,8 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "nodemon server",
+    "start": "node server",
+    "dev": "nodemon server",
     "build": "cd client && npm install && npm run build",
     "oldprod": "react-scripts start",
     "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
