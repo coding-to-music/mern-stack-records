@@ -2,6 +2,8 @@ import axios from "axios";
 
 const port = process.env.PORT || 4000;
 
+console.log(process.env);
+
 const url = `http://localhost:${port}/posts`;
 
 console.log(`Listening on port ${port}`);
