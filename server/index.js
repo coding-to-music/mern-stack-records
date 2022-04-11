@@ -1,7 +1,6 @@
 // import dotenv from "dotenv";
 import "dotenv/config";
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -10,61 +9,14 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// const mongoose = require("mongoose");
-// const express = require("express");
-// require("dotenv").config();
-
-// const app = express();
-
-// // app.use(bodyParser.json({ limit: '30mb', extended: true }));
-// // app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-// app.use(express.json({ limit: '30mb', extended: true }));
-// app.use(express.urlencoded({ limit: '30mb', extended: true }));
-
-// const CONNECTION_URL = process.env.ATLAS_URI;
-// const CONNECT_OPTIONS = {
-// 	useNewUrlParser: true,
-// 	useCreateIndex: true,
-// 	useUnifiedTopology: true,
-// };
-// const PORT = process.env.PORT || 5000;
-
-// mongoose
-// 	.connect(CONNECTION_URL, CONNECT_OPTIONS)
-// 	.then(() =>
-// 		app.listen(PORT, () => console.log(`server running on port: ${PORT}`))
-// 	)
-// 	.catch((error) => console.log(error));
-
-// mongoose.set('useFindAndModify', false);
-
-// const path = require("path");
-
 const port = process.env.PORT || 4000;
 
 const app = express();
 
-const MONGODB_URI = process.env.MONGODB_URI;
+// ℹ️ Connects to the database
+// import("./db");
 
-// app.use(express.static(path.join(__dirname, 'client/build')));
-
-const CONNECT_OPTIONS = {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-};
-
-mongoose
-  .connect(MONGODB_URI, CONNECT_OPTIONS)
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo: ", err);
-  });
+import "./db/index.js";
 
 // server
 app.listen(port, () => {
@@ -79,7 +31,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 // All remaining requests return the React app, so it can handle routing.
 app.get("*", function (request, response) {
   response.sendFile(
-    path.resolve(__dirname, "./client/build/static/js/", "main.*.js")
+    path.resolve(__dirname, "/client/build/static/js/", "main.*.js")
   );
 });
 // const postRoutes = require("./routes/posts.js");
