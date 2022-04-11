@@ -58,6 +58,8 @@ git push heroku
 ### Heroku config
 
 ```java
+# Probably did not need this:
+
 heroku config:set JS_RUNTIME_TARGET_BUNDLE=./client/build/static/js/*.js
 
 heroku config:set JS_RUNTIME_TARGET_BUNDLE=/build/static/js/*.js
@@ -100,6 +102,7 @@ heroku/nodejs
 ```java
 heroku buildpacks:set heroku/nodejs
 
+# did not need this:
 heroku buildpacks:add mars/create-react-app
 
 ```
@@ -113,7 +116,7 @@ Buildpack added. Next release on mern-stack-records will use:
 Run git push heroku main to create a new release using these buildpacks.
 ```
 
-Looks like it worked!
+Looks like it worked! (although it was not needed, no buildpack is needed)
 
 ```java
 2022-04-11T06:38:03.000000+00:00 app[api]: Build succeeded
